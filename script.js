@@ -35,11 +35,20 @@ magic8Ball.askQuestion = function(question) {
  
      // use that number to index a random number from the answers array
      var answer = this.listOfAnswers[randomIndex];
+
+     $("#answer").text(answer);
  
      console.log(question);
      console.log(answer);
 };
  
 // This is code that will be turned into a button with jquery - magic8Ball.askQuestion("Will today be a great day?");
+
+var onClick = function () {
+     var question = prompt("Ask a YES or NO Question!");
+     magic8Ball.askQuestion(question);
+};
+
+$("#questionButton").click(onClick);
 
 });
